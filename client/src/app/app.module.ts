@@ -8,6 +8,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
+import { BreadcrumbComponent } from 'xng-breadcrumb';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ErrorInterceptor } from './core/interceptors/error.interceptor';
     BrowserAnimationsModule,
     HttpClientModule,
     CoreModule,
-    HomeModule
+    HomeModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}

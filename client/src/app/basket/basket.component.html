@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div *ngIf="(basketService.basketSource$ | async) === null">
-        <p>There are no items in your basket</p>
+        <p style="font-size: 3em; color: rgb(238, 184, 118);">Basket is empty</p>
     </div>
 
     <ng-container *ngIf="(basketService.basketSource$ | async) as basket">
@@ -65,7 +65,7 @@
                                 <td class="align-middle"> <strong>{{item.price * item.quantity | currency}}</strong></td>
 
                                 <td class="align-middle">
-                                    <a href="" class="text-danger">
+                                    <a class="text-danger">
                                         <i (click)="removeItem(item.id,item.quantity)" class="fa fa-trash" style="font-size: 2em; cursor: pointer;"></i>
                                     </a>
                                 </td>

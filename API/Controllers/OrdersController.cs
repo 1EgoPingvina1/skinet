@@ -24,7 +24,6 @@ namespace API.Controllers
             _mapper = mapper;
         }
 
-
         [HttpPost]
         public async Task<ActionResult<Core.Entities.OrderAggregate.Order>> CreateOrder(OrderDto orderDto)
         {

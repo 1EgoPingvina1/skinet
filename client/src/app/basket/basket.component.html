@@ -1,6 +1,12 @@
 <div class="container mt-5">
     <div *ngIf="(basketService.basketSource$ | async) === null">
-        <p style="font-size: 3em; color: rgb(238, 184, 118);">Basket is empty</p>
+        <div class="d-flex justify-content-center mt-5">
+            <p style="font-size: 3em;">Корзина пуста</p>
+        </div>
+        <div class="d-flex justify-content-center ">
+            <button routerLink="/shop" style="font-size: 1.5em;" class="btn btn-outline-primary">Что-нибудь купить</button>
+        </div>
+        
     </div>
 
     <ng-container *ngIf="(basketService.basketSource$ | async) as basket">

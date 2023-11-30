@@ -44,13 +44,13 @@ namespace API.Controllers
             };
         }
 
-        [HttpGet("emailexists")]
+        [HttpGet("emailExists")]
         public async Task<ActionResult<bool>> CheckEmailExists([FromQuery] string email)
         {
             return await _userManager.FindByEmailAsync(email) != null;
         }
-
-        [HttpGet("Adress")]
+        [Authorize]
+        [HttpGet("address")]
         public async Task<ActionResult<AddressDto>> GetUserAddress()
         {
             var email = User.FindFirstValue(ClaimTypes.Email);
@@ -66,7 +66,7 @@ namespace API.Controllers
         {
             var user = await _userManager.FindUserByClaimsPrincipleWithAddress(HttpContext.User);
 
-            user.Address = _mapper.Map<AddressDto,Address>(address);
+            user.Address = _mapper.Map<AddressDto, Address>(address);
 
             var result = await _userManager.UpdateAsync(user);
             if(result.Succeeded)

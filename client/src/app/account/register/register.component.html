@@ -5,7 +5,6 @@
                 <h1 class="mb-3">Sign up</h1>
             </div>
 
-
             <app-text-input [formControl]="registerForm.controls['displayName']"
                 [label]="'Display Name'"></app-text-input>
             <app-text-input [formControl]="registerForm.controls['email']" [label]="'Email'"></app-text-input>
@@ -16,7 +15,6 @@
                 <li *ngFor="let error of errors">
                 {{errors}}</li>
             </ul>
-
 
             <div class="d-grid">
                 <button [disabled]="registerForm.invalid" class="btn btn-lg btn-primary mt-3" type="submit">Sign in</button>

@@ -3,8 +3,8 @@
     min-height: 25px;
     min-width: 25px;
     border-radius: 50%;
-    background: blue;
-    color: white;
+    background: rgb(191, 254, 1);
+    color: rgb(0, 0, 0);
     text-align: center;
     top: -12px;
     right: 32px;
@@ -14,10 +14,11 @@ a{
     color: #343a40;
 
     &.active {
-        color: orange;
+        color: rgb(247, 234, 148);
     }
 }
 
 .logo{
     cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }

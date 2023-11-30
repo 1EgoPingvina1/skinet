@@ -6,11 +6,7 @@
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
 
-@import "node_modules/bootswatch/dist/materia/variables";
-@import "node_modules/bootstrap/scss/bootstrap";
-@import "node_modules/bootswatch/dist/journal/bootswatch";
-@import "node_modules/bootswatch/dist/journal/bootstrap.min.css";
 
 label.xng-breadcrumb-trail{
-    color: orange;
+    color:bisque;
 }

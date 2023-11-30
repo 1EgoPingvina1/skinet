@@ -7,8 +7,8 @@ namespace API.Dtos
     {
         [Required]
         public string FirstName { get; set; }
+        
         [Required]
-
         public string LastName { get; set; }
         
         [Required]
@@ -21,6 +21,6 @@ namespace API.Dtos
         public string State { get; set; }
        
         [Required]
-        public string ZipCode { get; set; }
+        public string zipCode { get; set; }
     }
 }

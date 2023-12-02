@@ -35,15 +35,26 @@ namespace Core.Services
 
             var subtotal = items.Sum(item => item.Price * item.Quantity);
 
-            var order = new Order(buyerEmail,shippingAddress,deliveryMethod,items,subtotal);
+            var spec = new OrderByPaymentIntentIdSpec(basket.PaymentIntentId);
+            var order = await _unitOfWork.Repository<Order>().GetEntityWithSpec(spec);
 
-            _unitOfWork.Repository<Order>().Add(order);
+            if(order != null)
+            {
+                order.ShipToAddress = shippingAddress;
+                order.DeliveryMethod = deliveryMethod;
+                order.SubTotal = subtotal;
+                _unitOfWork.Repository<Order>().Update(order);
+            }
+            else
+            {
+                order = new Order(buyerEmail, shippingAddress, deliveryMethod, items, subtotal, basket.PaymentIntentId);
+
+                _unitOfWork.Repository<Order>().Add(order);
+            }
 
             var result = await _unitOfWork.Complete();
 
             if (result <= 0) return null;
-
-            await _basketRepo.DeleteBasketAsync(basketId);
 
             return order;
         }

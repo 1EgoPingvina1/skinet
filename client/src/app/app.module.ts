@@ -8,12 +8,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
-import { BreadcrumbComponent } from 'xng-breadcrumb';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminPanelComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +27,6 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
-
   ],
   bootstrap: [AppComponent]
 })

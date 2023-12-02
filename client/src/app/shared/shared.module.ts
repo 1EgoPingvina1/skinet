@@ -11,7 +11,7 @@ import { StepperComponent } from './components/stepper/stepper.component';
 import { CdkStepperModule} from '@angular/cdk/stepper';
 import { BasketSummaryComponent } from './basket-summary/basket-summary.component';
 import { RouterLink } from '@angular/router';
-
+import { MatTabsModule} from '@angular/material/tabs'
 @NgModule({
   declarations: [
     PagingHeaderComponent,
@@ -27,7 +27,8 @@ import { RouterLink } from '@angular/router';
     ReactiveFormsModule,
     BsDropdownModule.forRoot(),
     CdkStepperModule,
-    RouterLink
+    RouterLink,
+    MatTabsModule
   ],
   exports:[
     PaginationModule,

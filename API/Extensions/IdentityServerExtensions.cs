@@ -19,7 +19,8 @@ namespace API.Extensions
 
             services.AddIdentityCore<AppUser>(options =>
             {
-            }).AddEntityFrameworkStores<AppIdentityDbContext>()
+            })
+            .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddSignInManager<SignInManager<AppUser>>();
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -34,7 +35,10 @@ namespace API.Extensions
                         ValidateAudience = false
                     };
                 });
-            services.AddAuthorization();
+            services.AddAuthorization(opt =>
+            {
+                opt.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
+            });
 
             return services;
         }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AccountModule } from '../account/account.module';
 import { AccountService } from '../account/account.service';
 import { BasketService } from '../basket/basket.service';
 

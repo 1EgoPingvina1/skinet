@@ -20,6 +20,8 @@ namespace API.Extensions
             services.AddIdentityCore<AppUser>(options =>
             {
             })
+            .AddRoles<AppRole>()
+            .AddRoleManager<RoleManager<AppRole>>()
             .AddEntityFrameworkStores<AppIdentityDbContext>()
             .AddSignInManager<SignInManager<AppUser>>();
 
@@ -35,10 +37,6 @@ namespace API.Extensions
                         ValidateAudience = false
                     };
                 });
-            services.AddAuthorization(opt =>
-            {
-                opt.AddPolicy("RequireAdminRole", policy => policy.RequireRole("Admin"));
-            });
 
             return services;
         }

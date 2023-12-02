@@ -1,5 +1,6 @@
 ﻿using Core.Entities.Identity;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,5 +35,14 @@ namespace Infrastructure.identity
                 await userManager.CreateAsync(user, "Pa$$w0rd");
             }
         }
+
+        public static async Task SeedUserRoleAsync(RoleManager<AppRole> roleManager)
+        {
+            await roleManager.CreateAsync(new AppRole
+            {
+                Name = "Client"
+            });
+        }
+
     }
 }

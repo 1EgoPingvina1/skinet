@@ -7,6 +7,7 @@ using Core.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq.Expressions;
 using System.Security.Claims;
 
 namespace API.Controllers
@@ -17,17 +18,19 @@ namespace API.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly ITokenService _tokenService;
         private readonly IMapper _mapper;
+        private readonly RoleManager<AppRole> _roleManager;
 
         public AccountController(
             UserManager<AppUser> userManager, 
             SignInManager<AppUser> signInManager,
             ITokenService tokenService,
-            IMapper mapper) 
+            IMapper mapper,RoleManager<AppRole> roleManager) 
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
             _mapper = mapper;
+            _roleManager = roleManager;
         }
 
         [HttpGet]

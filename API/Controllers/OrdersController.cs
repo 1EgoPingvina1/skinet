@@ -2,13 +2,10 @@
 using API.Errors;
 using API.Extensions;
 using AutoMapper;
-using Core.Entities.Identity;
 using Core.Entities.OrderAggregate;
 using Core.interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StackExchange.Redis;
-using System.Security.Claims;
 
 namespace API.Controllers
 {

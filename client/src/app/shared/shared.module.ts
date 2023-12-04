@@ -12,6 +12,8 @@ import { CdkStepperModule} from '@angular/cdk/stepper';
 import { BasketSummaryComponent } from './basket-summary/basket-summary.component';
 import { RouterLink } from '@angular/router';
 import { MatTabsModule} from '@angular/material/tabs'
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
 @NgModule({
   declarations: [
     PagingHeaderComponent,
@@ -28,7 +30,8 @@ import { MatTabsModule} from '@angular/material/tabs'
     BsDropdownModule.forRoot(),
     CdkStepperModule,
     RouterLink,
-    MatTabsModule
+    MatTabsModule,
+    CarouselModule.forRoot()
   ],
   exports:[
     PaginationModule,
@@ -40,7 +43,8 @@ import { MatTabsModule} from '@angular/material/tabs'
     TextInputComponent,
     StepperComponent,
     CdkStepperModule,
-    BasketSummaryComponent
+    BasketSummaryComponent,
+    CarouselModule,
   ]
 })
 export class SharedModule { }

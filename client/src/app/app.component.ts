@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BasketService } from './basket/basket.service';
 import { AccountService } from './account/account.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { AccountService } from './account/account.service';
 export class AppComponent implements OnInit {
   title = 'Client';
 
-  constructor(private basketService: BasketService,private accountService:AccountService){
+  constructor(private basketService: BasketService,
+              private accountService:AccountService,
+              private router:Router){
 
   }
   ngOnInit(): void {

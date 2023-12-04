@@ -32,6 +32,7 @@ export class CheckoutComponent implements OnInit {
     deliveryForm:this.fb.group({
       deliveryMethod: ['',Validators.required]
     }),
+    
     paymentForm: this.fb.group({
       nameOnCard: ['' ,Validators.required]
     })
@@ -44,7 +45,6 @@ export class CheckoutComponent implements OnInit {
       }
     })
   }
-
 
   getDeliveryMethodValue(){
     const basket = this.basketService.getCurrentBasketValue();

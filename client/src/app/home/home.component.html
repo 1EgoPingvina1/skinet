@@ -1,1 +1,35 @@
-<p>home works!</p>
+<carousel [isAnimated]="true">
+    <slide>
+        <img src="./assets/images/1486377558_slider.jpg" alt="slide" style="display:block; width: 100%;">
+    </slide>
+
+    <slide>
+        <img src="./assets/images/slider4-919182l-109639_l.jpg" alt="slide" style="display:block; width: 100%;">
+    </slide>
+
+    <slide>
+        <img src="./assets/images/Slider-02-hsclothing-02.jpg" alt="slide" style="display:block; width: 100%;">
+    </slide>
+</carousel>
+
+
+<section class="featured">
+    <hr>
+    <div class="d-flex justify-content-center pt-4">
+        <h2>Welcome to the shop</h2>
+    </div>
+    <hr>
+
+</section>
+
+<div class="row row-cols-3 g-3 mb-4">
+    <div class="col" *ngFor="let product of products">
+        <app-home-products-items [product]="product"></app-home-products-items>
+    </div>
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="totalCount > 0">
+    <app-pager [totalCount]="totalCount" [pageSize]="shopParams.pageSize"
+        (pageChanged)="onPageChanged($event)">
+    </app-pager>
+</div>

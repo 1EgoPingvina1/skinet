@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { BasketService } from './basket.service';
 import { BasketItem } from '../shared/models/basket';
-import { AccountService } from '../account/account.service';
 
 @Component({
   selector: 'app-basket',

@@ -3,23 +3,23 @@
         <thead class="text-uppercase" [class.bg-light]="isBasket">
             <tr>
                 <th>
-                    <div class="py-2">Product</div>
+                    <div class="py-2">Товар</div>
                 </th>
 
                 <th>
-                    <div class="py-2">Price</div>
+                    <div class="py-2">Цена</div>
                 </th>
 
                 <th>
-                    <div class="py-2" [class.text.center]="!isBasket">Quantity</div>
+                    <div class="py-2" [class.text.center]="!isBasket">Количество</div>
                 </th>
 
                 <th>
-                    <div class="py-2">Total</div>
+                    <div class="py-2">Итого</div>
                 </th>
 
                 <th *ngIf="isBasket">
-                    <div class="py-2">Remove</div>
+                    <div class="py-2">Удалить</div>
                 </th>
             </tr>
         </thead>
@@ -39,7 +39,7 @@
                                     </a>
                                 </h5>
                                 <span class="text-muted fst-italic">
-                                    Type: {{item.type}}
+                                    Тип: {{item.type}}
                                 </span>
                             </div>
                     </div>

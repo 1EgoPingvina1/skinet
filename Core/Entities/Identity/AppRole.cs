@@ -2,7 +2,7 @@
 
 namespace Core.Entities.Identity
 {
-    public class AppRole : IdentityRole<string>
+    public class AppRole : IdentityRole
     {
     }
 }

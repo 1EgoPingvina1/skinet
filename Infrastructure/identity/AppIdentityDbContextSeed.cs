@@ -31,7 +31,6 @@ namespace Infrastructure.identity
                         ZipCode = "90210"
                     }
                 };
-
                 await userManager.CreateAsync(user, "Pa$$w0rd");
             }
         }
@@ -42,7 +41,12 @@ namespace Infrastructure.identity
             {
                 Name = "Client"
             });
-        }
 
+            await roleManager.CreateAsync(new AppRole
+            {
+                Name = "Admin"
+            });
+
+        }
     }
 }
